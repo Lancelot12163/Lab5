@@ -29,6 +29,11 @@ public class Bank {
         /*
          * Implement this function
          */
+        if (amount <= bankAccount.accountBalance || amount >= 0) {
+            bankAccount.accountBalance -= amount;
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -45,6 +50,11 @@ public class Bank {
         /*
          * Implement this function
          */
+        if (amount >= 0) {
+            bankAccount.accountBalance += amount;
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -64,6 +74,13 @@ public class Bank {
         /*
          * Implement this function
          */
+        if (amount >= 0 || amount <= source.accountBalance) {
+            source.accountBalance -= amount;
+            destination.accountBalance += amount;
+            return true;
+        }
+        return false;
+
     }
 
     /**
@@ -77,6 +94,7 @@ public class Bank {
         /*
          * Implement this function
          */
+        bankAccount.ownerName = name;
     }
 
     public static int totalAccounts = 0;
@@ -89,6 +107,7 @@ public class Bank {
         /*
          * Implement this function
          */
+        return accountNumber;
     }
 
     /**
